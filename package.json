@@ -11,7 +11,7 @@
     "ai",
     "generative-ai"
   ],
-  "version": "0.0.1-rc.3",
+  "version": "0.0.1-rc.4",
   "description": "Genkit AI framework plugin for HNSW vector database. get LLM Model response enriched with defined knowledge with HNSW Vector Database through RAG Implementation",
   "main": "lib/index.js",
   "scripts": {
