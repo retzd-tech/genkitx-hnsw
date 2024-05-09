@@ -5,7 +5,6 @@
     "genkit-indexer",
     "genkit-retriever",
     "genkit-embedder",
-    "genkit-model",
     "genkit-flow",
     "genkit-rag",
     "hnsw",
@@ -15,7 +14,7 @@
     "generative-ai",
     "genai"
   ],
-  "version": "0.1.0-rc.6",
+  "version": "0.1.0-rc.7",
   "description": "Genkit AI framework plugin for HNSW vector database. get AI response enriched with additional context and knowledge with HNSW Vector Database using RAG Implementation",
   "main": "lib/index.js",
   "scripts": {
