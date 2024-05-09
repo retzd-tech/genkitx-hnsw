@@ -38,9 +38,9 @@ npm install genkitx-hnsw
 
 ## Plugin List
 This plugin has several functionality as below :
-- HNSW Indexer
+- `HNSW Indexer`
   Used to create a Vector Index based on all the data and information you provided. this Vector Index will be used as a knowledge reference of HNSW Retriever.
-- HNSW Retriever
+- `HNSW Retriever`
   Used to get Generative AI response with Gemini Model as a base enriched with additional knowledge and context based on your Vector Index.
 
 ## Usage
