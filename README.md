@@ -13,16 +13,16 @@ You can prefer this vector database if you prefer
 - Managing vector index as a File
 - Small size but fast performance
 
-With this you can achieve a high performing Retrieval Augmentation Generation (RAG) in Generative AI so you do not need to build your own AI Model or retrain the AI Model to get more context or knowledge, instead you can add context so that your AI Model can understand more knowledge than what the base AI Model knows. this is useful if you want to get more context or more knowledge based on specific informations or knowledge that you define.
+With this you can achieve a high performing Retrieval Augmentation Generation (RAG) in Generative AI so you do not need to build your own AI Model or retrain the AI Model to get more context or knowledge, instead you can add additional layer of context so that your AI Model can understand more knowledge than what the base AI Model knows. this is useful if you want to get more context or more knowledge based on specific informations or knowledge that you define.
 
 ### Example use case :
-You have Restaurants application or website, you can add specific information about your restaurants, address, food menu list with its price and the other specific things, so that when your customer ask something to the AI about your Restaurant, your AI can answer it accurately. this can remove your effort to build a Chatbot, instead you can use Generative AI enriched with specific knowledge.
+You have Restaurant application or website, you can add specific information about your restaurants, address, food menu list with its price and the other specific things, so that when your customer ask something to the AI about your Restaurant, your AI can answer it accurately. this can remove your effort to build a Chatbot, instead you can use Generative AI enriched with specific knowledge.
 
 Example conversation :
 
-`You` : What is the list menu of food of my restaurant in Surabaya City ?
+`You` : What is the price list of my restaurant in Surabaya City ?
 
-`AI` : List of food menu are :
+`AI` : Price List :
 - Rawon Setan - Rp. 15.000
 - Lontong Balap - Rp.12.000
 - Rendang - Rp.15.000
