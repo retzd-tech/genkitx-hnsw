@@ -4,22 +4,22 @@ You can contribute to this plugin in this [Repository](https://github.com/retzd-
 ## Description
 HNSW is Vector Database Hierarchical Navigable Small World (HNSW) graphs are among the top-performing indexes for vector similarity search. HNSW is a hugely popular technology that time and time again produces state-of-the-art performance with super fast search speeds and fantastic recall.
 
-You can prefer this vector databse if you prefer
+You can prefer this vector database if you prefer
 - A simple vector database setup
 - Handle and manage your own vector index on your own server
 - Managing vector index as a File
 - Small size but fast performance
 
-With this you can achieve a high performing Retrieval Augmentation Generation (RAG) in Generative AI so you do not need to vuild your own Model or retrain the model to get more context or knowledge, instead you can add context so that your AI Model can understand more knowledge than what the base AI Model knows. this is useful if you want to get more context or more knowledge based on specific informations or knowledge that you define.
+With this you can achieve a high performing Retrieval Augmentation Generation (RAG) in Generative AI so you do not need to build your own AI Model or retrain the AI Model to get more context or knowledge, instead you can add context so that your AI Model can understand more knowledge than what the base AI Model knows. this is useful if you want to get more context or more knowledge based on specific informations or knowledge that you define.
 
-### Example use case:
-you have Restaurants application or website, you can add specific information about your restaurants, address, food menu list with its price and the other specific things, so that when your customer ask something to the AI about your Restaurant, your AI can answer it accurately. this can remove your effort to build a Chatbot, instead you can use Generative AI enriched with specific knowledge.
+### Example use case :
+You have Restaurants application or website, you can add specific information about your restaurants, address, food menu list with its price and the other specific things, so that when your customer ask something to the AI about your Restaurant, your AI can answer it accurately. this can remove your effort to build a Chatbot, instead you can use Generative AI enriched with specific knowledge.
 
 Example conversation :
 
 `You` : What is the list menu of food of my restaurant in Surabaya City ?
 
-`AI` : List of food menu are ;
+`AI` : List of food menu are :
 - Rawon Setan - Rp. 15.000
 - Lontong Balap - Rp.12.000
 - Rendang - Rp.15.000
@@ -30,24 +30,35 @@ Before installing the plugin, ensure you have the following prerequisites instal
 - [npm](https://www.npmjs.com/) (usually comes with Node.js installation)
 - [TypeScript](https://www.typescriptlang.org/) (you can install it globally via npm: `npm install -g typescript`)
 
-To install this Plugin, you can run this command or with your prefered package manager
+To install this plugin, you can run this command or with your prefered package manager
 
 ```bash
 npm install genkitx-hnsw
 ```
 
 ## Usage HNSW Indexer
-This plugin is the indexer part to implement Augmented Generation (RAG) in Generative AI for your application with Firebase Genkit, this is a Genkit plugin flow to save data into vector store with HNSW Vector Store, Gemini Embedder and Gemini LLM.
+This is a Genkit plugin flow to save data into vector store with HNSW Vector Store, Gemini Embedder and Gemini LLM.
 
 #### Data preparations
 Prepare your data or documents in a Folder
 ![Restaurants data](https://github.com/retzd-tech/genkitx-hnsw-indexer/blob/main/assets/restaurants-data.png?raw=true)
 
-#### Genkit UI
+#### Register HNSW Indexer Plugin
+Import the plugin into your Genkit project
+```bash
+import { hnswIndexer } from "genkitx-hnsw";
+
+export default configureGenkit({
+  plugins: [
+    hnswIndexer({ apiKey: "GOOGLE_API_KEY" })
+  ]
+});
+```
+
+#### Genkit UI flow running
 Open Genkit UI and choose the registered Plugin "HNSW Indexer"
 ![Genkit UI Flow List](https://github.com/retzd-tech/genkitx-hnsw-indexer/blob/main/assets/genkit-ui-flow.png?raw=true)
 
-#### Genkit Flow Running
 Execute the flow with Input and Output required parameter
 - dataPath : Your data and other documents path to be learned by the AI
 - indexOutputPath : Your expected output path for your Vector Store Index that is processed based on the data and documents you provided
@@ -71,24 +82,26 @@ Vector store will be saved in the defined Output path. this index will be used f
 ## Usage HNSW Retriever
 This is a Genkit plugin flow to process your prompt with Gemini LLM Model enriched with additional and specific information or knowledge within the HNSW Vector Database you provided. with this plugin you will get LLM response with additional specific context.
 
-#### Register HNSW Indexer Plugin
+
+#### Register HNSW Retriever Plugin
 Import the plugin into your Genkit project
 ```bash
 import { googleAI } from "@genkit-ai/googleai";
-import { hnswIndexer } from "genkitx-hnsw";
+import { hnswRetriever } from "genkitx-hnsw";
 
 export default configureGenkit({
   plugins: [
-    hnswIndexer({ apiKey: "GOOGLE_API_KEY" })
+    googleAI(),
+    hnswRetriever({ apiKey: "GOOGLE_API_KEY" })
   ]
 });
 ```
+Make sure you import the GoogleAI plugin for the Gemini LLM Model provider, currently this plugin only supports Gemini, will provide more model soon!
 
-#### Genkit UI
-Open Genkit UI and choose the registered Plugin "HNSW Retriever"
+#### Genkit UI flow running
+Open Genkit UI and choose the registered Plugin `HNSW Retriever`
 ![Genkit UI Flow](https://github.com/retzd-tech/genkit-hnsw/blob/main/assets/flows-list.png?raw=true)
 
-#### Genkit Flow Running
 Execute the flow with the required parameter
 - `prompt` : Type your prompt where you will get answers with more enriched context based on the vector you provided.
 - `indexPath` : Define Vector Index path you wanna use, you can also retrieve it by using `genkitx-hnsw-indexer` plugin, this is the vector that will add more context for the LLM model to answer.
