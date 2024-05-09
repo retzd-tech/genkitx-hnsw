@@ -142,3 +142,5 @@ We can type the prompt and run it, after the flow finished, you will get respons
   These are sequences of tokens that, when generated, signal the model to stop generating text. This can be useful for controlling the length or content of the generated output, such as ensuring the model stops generating after reaching the end of a sentence or paragraph.
 
     `default value : []`
+
+License : Apache 2.0

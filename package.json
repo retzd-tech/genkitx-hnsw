@@ -14,7 +14,7 @@
     "generative-ai",
     "genai"
   ],
-  "version": "0.1.1-rc.2",
+  "version": "0.1.1-rc.7",
   "description": "Genkit AI framework plugin for HNSW vector database. get AI response enriched with additional context and knowledge with HNSW Vector Database using RAG Implementation",
   "main": "lib/index.js",
   "scripts": {
@@ -48,5 +48,9 @@
   "files": [
     "lib"
   ],
-  "types": "./lib/index.d.ts"
+  "types": "./lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/retzd-tech/genkitx-hnsw.git"
+  }
 }
