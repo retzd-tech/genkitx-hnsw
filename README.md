@@ -1,8 +1,11 @@
 # Genkit Plugin HNSW Vector Database
+
+![Genkit HNSW Logo](https://github.com/retzd-tech/genkitx-hnsw/blob/main/assets/genkit-hnsw-logo.png?raw=true)
+
 You can contribute to this plugin in this [Repository](https://github.com/retzd-tech/genkitx-hnsw).
 
 ## Description
-HNSW is Vector Database Hierarchical Navigable Small World (HNSW) graphs are among the top-performing indexes for vector similarity search. HNSW is a hugely popular technology that time and time again produces state-of-the-art performance with super fast search speeds and fantastic recall.
+HNSW is Vector Database Hierarchical Navigable Small World (HNSW) graphs are among the top-performing indexes for vector similarity search. HNSW is a hugely popular technology that time and time again produces state-of-the-art performance with super fast search speeds and fantastic recall. learn more about [HNSW](https://www.pinecone.io/learn/series/faiss/hnsw).
 
 You can prefer this vector database if you prefer
 - A simple vector database setup
@@ -50,7 +53,7 @@ This is a Genkit plugin flow to save data into vector store with HNSW Vector Sto
 
 #### Data preparations
 Prepare your data or documents in a Folder
-![Restaurants data](https://github.com/retzd-tech/genkitx-hnsw-indexer/blob/main/assets/restaurants-data.png?raw=true)
+![Restaurants data](https://github.com/retzd-tech/genkitx-hnsw/blob/main/assets/restaurants-data.png?raw=true)
 
 #### Register HNSW Indexer Plugin
 Import the plugin into your Genkit project
@@ -64,19 +67,18 @@ export default configureGenkit({
 });
 ```
 
-#### Genkit UI flow running
-Open Genkit UI and choose the registered Plugin "HNSW Indexer"
-![Genkit UI Flow List](https://github.com/retzd-tech/genkitx-hnsw-indexer/blob/main/assets/genkit-ui-flow.png?raw=true)
+#### Genkit UI HNSW Indexer flow running
+Open Genkit UI and choose the registered Plugin `HNSW Indexer`
 
 Execute the flow with Input and Output required parameter
 - dataPath : Your data and other documents path to be learned by the AI
 - indexOutputPath : Your expected output path for your Vector Store Index that is processed based on the data and documents you provided
 
-![Genkit UI Flow Run](https://github.com/retzd-tech/genkitx-hnsw-indexer/blob/main/assets/genkit-ui-flow-plugin.png?raw=true)
+![Genkit UI HNSW Indexer Flow](https://github.com/retzd-tech/genkitx-hnsw/blob/main/assets/hnsw-indexer-flow.png?raw=true)
 
 #### Vector Store Index Result
 Vector store will be saved in the defined Output path. this index will be used for the RAG process with the HNSW Retriever plugin. you can continue the implementation by using the HNSW Retriever plugin 
-![HNSW Vector](https://github.com/retzd-tech/genkitx-hnsw-indexer/blob/main/assets/vector-result.png?raw=true)
+![HNSW Vector](https://github.com/retzd-tech/genkitx-hnsw/blob/main/assets/hnsw-indexer-result.png?raw=true)
 
 ### Optional Parameter
   - `chunkSize: number`
@@ -107,19 +109,17 @@ export default configureGenkit({
 ```
 Make sure you import the GoogleAI plugin for the Gemini LLM Model provider, currently this plugin only supports Gemini, will provide more model soon!
 
-#### Genkit UI flow running
+#### Genkit UI HNSW Retriever flow running
 Open Genkit UI and choose the registered Plugin `HNSW Retriever`
-![Genkit UI Flow](https://github.com/retzd-tech/genkit-hnsw/blob/main/assets/flows-list.png?raw=true)
-
 Execute the flow with the required parameter
 - `prompt` : Type your prompt where you will get answers with more enriched context based on the vector you provided.
-- `indexPath` : Define Vector Index path you wanna use, you can also retrieve it by using `genkitx-hnsw-indexer` plugin, this is the vector that will add more context for the LLM model to answer.
+- `indexPath` : Define Vector Index path you wanna use as a knowledge reference, where you get this file from HNSW Indexer plugin.
 
 In this example, Let's try to ask the AI Model about the information of a restaurant that has been provided based on the Vector Index.
 
 We can type the prompt and run it, after the flow finished, you will get response from the Gemini LLM Model enriched with specific knowledge based on your Vector Index.
 
-![Genkit UI Prompt Result](https://github.com/retzd-tech/genkit-hnsw/blob/main/assets/prompt-result.png?raw=true)
+![Genkit UI Prompt Result](https://github.com/retzd-tech/genkit-hnsw/blob/main/assets/hnsw-retriever-flow.png?raw=true)
 
 ### Optional Parameter
   - `temperature: number`
