@@ -14,6 +14,5 @@ export const throwError = (status: StatusName, message: string) => {
 
 export const checkApiKey = (pluginOptions: PluginOptions) => {
   const { apiKey } = pluginOptions;
-  const isNoApiKey = !apiKey && !process.env.GOOGLE_API_KEY;
-  if (isNoApiKey) return throwError(ERROR_INVALID_ARGUMENT, ERROR_NO_API_KEY);
+  if (!apiKey) return throwError(ERROR_INVALID_ARGUMENT, ERROR_NO_API_KEY);
 };

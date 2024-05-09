@@ -13,7 +13,7 @@ export const hnswIndexerAction = async (
   try {
     return await saveVectorIndexer(flowOptions, pluginOptions);
   } catch (error) {
-    return `Vector saving error ${error}`;
+    return `Vector index saving error, ${error}`;
   }
 };
 
@@ -24,6 +24,6 @@ export const hnswRetrieverAction = async (
   try {
     return await retrieveResponseWithVector(flowOptions, pluginOptions);
   } catch (error) {
-    return `Vector saving error ${error}`;
+    return `Error generating prompt response, ${error}`;
   }
 };

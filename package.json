@@ -2,17 +2,21 @@
   "name": "genkitx-hnsw",
   "keywords": [
     "genkit-plugin",
+    "genkit-indexer",
     "genkit-retriever",
+    "genkit-embedder",
     "genkit-model",
     "genkit-flow",
     "genkit-rag",
     "hnsw",
+    "vector",
     "rag",
     "ai",
-    "generative-ai"
+    "generative-ai",
+    "genai"
   ],
-  "version": "0.1.0-rc.4",
-  "description": "Genkit AI framework plugin for HNSW vector database. get LLM Model response enriched with defined knowledge with HNSW Vector Database through RAG Implementation",
+  "version": "0.1.0-rc.6",
+  "description": "Genkit AI framework plugin for HNSW vector database. get AI response enriched with additional context and knowledge with HNSW Vector Database using RAG Implementation",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
