@@ -36,7 +36,16 @@ To install this plugin, you can run this command or with your prefered package m
 npm install genkitx-hnsw
 ```
 
-## Usage HNSW Indexer
+## Plugin List
+This plugin has several functionality as below :
+- HNSW Indexer
+  Used to create a Vector Index based on all the data and information you provided. this Vector Index will be used as a knowledge reference of HNSW Retriever.
+- HNSW Retriever
+  Used to get Generative AI response with Gemini Model as a base enriched with additional knowledge and context based on your Vector Index.
+
+## Usage
+
+## Usage HNSW Indexer plugin
 This is a Genkit plugin flow to save data into vector store with HNSW Vector Store, Gemini Embedder and Gemini LLM.
 
 #### Data preparations
@@ -79,7 +88,7 @@ Vector store will be saved in the defined Output path. this index will be used f
 
     `default value : "\n"`
 
-## Usage HNSW Retriever
+## Usage HNSW Retriever plugin
 This is a Genkit plugin flow to process your prompt with Gemini LLM Model enriched with additional and specific information or knowledge within the HNSW Vector Database you provided. with this plugin you will get LLM response with additional specific context.
 
 
