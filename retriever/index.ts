@@ -1,10 +1,9 @@
-import "node-absolute-path";
 import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
 import { HNSWLib } from "langchain/vectorstores";
 import { generate } from "@genkit-ai/ai";
 import { geminiPro as geminiProModel } from "@genkit-ai/googleai";
 
-import { FlowOptions, PluginOptions } from "../interfaces";
+import { RetrieverFlowOptions, PluginOptions } from "../interfaces";
 
 const generateHistories = (contexts: any[]) => {
   const histories: any[] = [];
@@ -44,7 +43,7 @@ const getContextBasedOnPrompt = async (store: HNSWLib, prompt: string) => {
 };
 
 const retrieveResponseWithVector = async (
-  flowOptions: FlowOptions,
+  flowOptions: RetrieverFlowOptions,
   pluginOptions: PluginOptions
 ) => {
   const {

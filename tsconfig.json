@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "include": [
+    "indexer",
     "retriever",
     "index.ts",
     "constants",
