@@ -3,6 +3,9 @@
   "include": [
     "indexer",
     "retriever",
+    "config",
+    "types",
+    "actions",
     "index.ts",
     "constants",
     "interfaces",

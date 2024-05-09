@@ -14,19 +14,19 @@
     "generative-ai",
     "genai"
   ],
-  "version": "0.1.0-rc.7",
+  "version": "0.1.1-rc.2",
   "description": "Genkit AI framework plugin for HNSW vector database. get AI response enriched with additional context and knowledge with HNSW Vector Database using RAG Implementation",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node lib/index.js",
-    "compile": "tsc",
+    "compile": "tsc --declaration",
     "build": "npm run build:clean && npm run compile",
     "build:clean": "rm -rf ./lib",
     "build:watch": "tsc --watch"
   },
   "author": "surahutomo.aziz@gmail.com",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "@genkit-ai/ai": "^0.5.0-rc.2",
     "@genkit-ai/core": "^0.5.0-rc.2",
@@ -44,5 +44,9 @@
     "@types/glob": "^8.1.0",
     "glob": "^8.1.0",
     "typescript": "^5.4.5"
-  }
+  },
+  "files": [
+    "lib"
+  ],
+  "types": "./lib/index.d.ts"
 }
