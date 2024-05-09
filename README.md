@@ -22,7 +22,7 @@ Example conversation :
 
 `You` : What is the price list of my restaurant in Surabaya City ?
 
-`AI` : Price List :
+`AI` : Price list :
 - Rawon Setan - Rp. 15.000
 - Lontong Balap - Rp.12.000
 - Rendang - Rp.15.000
@@ -49,7 +49,7 @@ This plugin has several functionality as below :
 ## Usage
 
 ## Usage HNSW Indexer plugin
-This is a Genkit plugin flow to save data into vector store with HNSW Vector Store, Gemini Embedder and Gemini LLM.
+This is a usage of Genkit plugin flow to save data into vector store with HNSW Vector Store, Gemini Embedder and Gemini LLM.
 
 #### Data preparations
 Prepare your data or documents in a Folder
@@ -68,17 +68,17 @@ export default configureGenkit({
 ```
 
 #### Genkit UI HNSW Indexer flow running
-Open Genkit UI and choose the registered Plugin `HNSW Indexer`
+Open Genkit UI and choose the registered plugin `HNSW Indexer`
 
 Execute the flow with Input and Output required parameter
-- dataPath : Your data and other documents path to be learned by the AI
-- indexOutputPath : Your expected output path for your Vector Store Index that is processed based on the data and documents you provided
+- `dataPath` : Your data and other documents path to be learned by the AI
+- `indexOutputPath` : Your expected output path for your Vector Store Index that is processed based on the data and documents you provided
 
 ![Genkit UI HNSW Indexer Flow](https://github.com/retzd-tech/genkitx-hnsw/blob/main/assets/hnsw-indexer-flow.png?raw=true)
 
 #### Vector Store Index Result
-Vector store will be saved in the defined Output path. this index will be used for the RAG process with the HNSW Retriever plugin. you can continue the implementation by using the HNSW Retriever plugin 
 ![HNSW Vector](https://github.com/retzd-tech/genkitx-hnsw/blob/main/assets/hnsw-indexer-result.png?raw=true)
+Vector store will be saved in the defined output path. this index will be used for the prompt generation process with the HNSW Retriever plugin. you can continue the implementation by using the HNSW Retriever plugin 
 
 ### Optional Parameter
   - `chunkSize: number`
@@ -91,7 +91,7 @@ Vector store will be saved in the defined Output path. this index will be used f
     `default value : "\n"`
 
 ## Usage HNSW Retriever plugin
-This is a Genkit plugin flow to process your prompt with Gemini LLM Model enriched with additional and specific information or knowledge within the HNSW Vector Database you provided. with this plugin you will get LLM response with additional specific context.
+This is a usage of Genkit plugin flow to process your prompt with Gemini LLM Model enriched with additional and specific information or knowledge within the HNSW Vector Database you provided. with this plugin you will get LLM response with additional specific context.
 
 
 #### Register HNSW Retriever Plugin
@@ -113,11 +113,11 @@ Make sure you import the GoogleAI plugin for the Gemini LLM Model provider, curr
 Open Genkit UI and choose the registered Plugin `HNSW Retriever`
 Execute the flow with the required parameter
 - `prompt` : Type your prompt where you will get answers with more enriched context based on the vector you provided.
-- `indexPath` : Define Vector Index path you wanna use as a knowledge reference, where you get this file from HNSW Indexer plugin.
+- `indexPath` : Define folder Vector Index path you wanna use as a knowledge reference, where you get this files path from HNSW Indexer plugin.
 
-In this example, Let's try to ask the AI Model about the information of a restaurant that has been provided based on the Vector Index.
+In this example, Let's try to ask about the price list information of a restaurant in Surabaya city, where it has been provided within the Vector Index.
 
-We can type the prompt and run it, after the flow finished, you will get response from the Gemini LLM Model enriched with specific knowledge based on your Vector Index.
+We can type the prompt and run it, after the flow finished, you will get response enriched with specific knowledge based on your Vector Index.
 
 ![Genkit UI Prompt Result](https://github.com/retzd-tech/genkit-hnsw/blob/main/assets/hnsw-retriever-flow.png?raw=true)
 
