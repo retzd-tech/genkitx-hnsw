@@ -10,6 +10,7 @@
     "constants",
     "interfaces",
     "utilities",
+    "*.test.ts",
   ],
   "compilerOptions": {
     "module": "commonjs",
@@ -19,6 +20,7 @@
     "strict": true,
     "target": "es2017",
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["jest", "node"]
   }
 }
